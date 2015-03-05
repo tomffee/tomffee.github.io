@@ -1,6 +1,31 @@
 $(function () {
 	new WOW().init();
 
+	var introHeight = {
+		init: function () {
+			if( $(window).innerHeight() <= 845 ) {
+				introHeight.change();
+			}
+		},
+		change: function () {
+			$('section.intro').css(
+				{
+					height: 600 + 'px',
+					maxHeight: 600 + 'px',
+					padding: 150 + 'px ' + 0
+				}
+			);
+			$('.intro-space').css(
+				{
+					height: 600 + 'px',
+					maxHeight: 600 + 'px'	
+				}
+			);
+		}
+	};
+
+	introHeight.init();
+
 	var navbar = {
 		init: function () {
 			var nav = $('#nav'),
@@ -33,11 +58,11 @@ $(function () {
         		return;
 			}
 		    if (st >= lastScrollTop && st >= navbarHeight){
-		        $('#nav').removeClass('hidden').addClass('showen');
+		        $('#nav').removeClass('close-it').addClass('showen');
 		    } else {
 		        // Scroll Up
 		        if(st + $(window).height() < $(document).height()) {
-		            $('#nav').removeClass('hidden').addClass('showen');
+		            $('#nav').removeClass('showen').addClass('close-it');
 		        }
 		    }
 		    
