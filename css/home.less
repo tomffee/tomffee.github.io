@@ -1,0 +1,505 @@
+@black: #212121;
+@white: #fff;
+@active-color: #2196f3;
+@inactive-color: #e0e0e0;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+label,
+input,
+li,
+span {
+	font-family: 'Roboto', Helvetica, sans-serif;
+	font-weight: 300;
+	color: @white;
+}
+h1 {
+	font-size: 46px;
+	strong {
+		font-weight: 300;
+		color: @active-color;
+	}
+}
+h4 {
+	font-size: 20px;
+}
+.btn {
+	font-weight: 500;
+	&.btn-circle {
+		position: relative;
+		height: 56px;
+		width: 56px;
+		padding: 0;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+	&.btn-rectangle {
+		position: relative;
+		min-width: 88px;
+		height: 36px;
+		padding: 8px 16px;
+		overflow: hidden;
+		border-radius: 2px;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+	&.btn-flat {
+		padding: 0;
+		&:hover {
+			color: @black;
+			font-weight: 400;
+
+		}
+	}
+	&.btn-z1 {
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+		-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+		transition: all 0.2s ease-in;
+		&:hover {
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+			transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+		}
+
+	}
+	&.btn-white {
+		background-color: @white;
+		color: @black;
+	}
+	&.btn-green {
+		background-color: #8bc34a;
+		color: @white;
+	}
+	&.btn-black {
+		background-color: @black;
+		color: @white;
+	}
+	.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus,
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+nav {
+	display: block;
+	max-height: 70px;
+	height: 70px;
+	width: 100%;
+	background-color: @active-color;
+	z-index: 1080;
+	&.navbar {
+		border-radius: 0;
+		position: fixed;
+		top: -70px;
+		&.showen {
+			top: 0px;
+			-webkit-animation: topp .25s; /* Chrome, Safari, Opera */
+    		animation: topp .25s;
+		}
+		&.hidden {
+			top: -70px;
+			transition: top 0.25ms ease-out;
+		}
+		@-webkit-keyframes topp {
+		    from {top: -70px;}
+		    to {top: 0px;}
+		}
+
+		/* Standard syntax */
+		@keyframes myfirst {
+		    from {top: -70px;}
+		    to {top: 0px;}
+		}
+	}
+	&.navbar-default {
+		background-color: @black;
+		border: none;
+		box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
+		-webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
+		.navbar-header {
+			height: 70px;
+			z-index: 1055;
+			.navbar-toggle {
+				border: none;
+				&:focus,
+				&:active {
+					background: none;
+				}
+				&:hover {
+					background: none;
+					svg {
+						path {
+							fill: @active-color;
+						}
+					}
+				}
+			}
+		}
+		ul.navbar-nav {
+			li {
+				a {
+					display: inline-block;
+					padding: 0;
+					line-height: 70px;
+					color: @inactive-color;
+					font-weight: 400;
+					font-size: 15px;
+					margin-left: 30px;
+					i {
+						display: inline-block;
+						position: relative;
+						padding: 27px 0;
+						font-size: 16px;
+					}
+					i + span {
+						margin-left: 15px;
+					}
+					&:hover,
+					&:focus,
+					&:active {
+						text-decoration: none;
+						outline: none;
+						color: @white;
+					}
+
+				}
+				&:first-child {
+					a {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+	.navbar-brand {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    text-align: center;
+	    margin: auto;
+	    padding: 10px 0;
+	    z-index: 1050;
+	    height: 1px;
+	    padding-bottom: 0;
+	    img {
+	    	max-height: 50px;
+	    	max-width: 50px;
+	    	margin: auto;
+	    	text-align: center;
+	    }
+	}
+	&.navbar >.container .navbar-brand, 
+	&.navbar>.container-fluid .navbar-brand {
+		margin-left: 0;
+	}
+	
+	.navbar-collapse.in,
+	.navbar-collapse.collapsing {
+		background-color: @black;
+		border-top: none;
+		height: 100vh;
+		li {
+			margin-left: 30px;
+			& > a {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}
+section.intro {
+	display: block;
+	position: fixed;
+	height: 800px;
+	max-height: 800px;
+	width: 100%;
+	top: 0;
+	background-color: @black;
+	padding: 250px 0;
+	z-index: -1;
+	h1 {
+		margin-top: 50px;
+	}
+}
+.intro-space {
+	display: block;
+	height: 800;
+	max-height: 800;
+	position: relative;
+	top: 0;
+	background: none;
+}
+section.about {
+	display: block;
+	position: relative;
+	background-color: @white;
+	padding-bottom: 60px;
+	h1,
+	h4,
+	h5,
+	h6,
+	p {
+		color: @black;
+	}
+	h1 {
+		margin-top: 100px;
+	}
+	h4 {
+		margin-bottom: 80px;
+	}
+	h5,
+	h6 {
+		font-weight: 400;
+	}
+	h5 {
+		margin-top: 40px;
+		font-size: 20px;
+	}
+	h6 {
+		font-size: 16px;
+		max-width: 90%;
+		margin: 10px auto 0;
+	}
+	p {
+		font-weight: 15px;
+		margin: 80px 0 15px 0;
+	}
+	.scroll-down-holder {
+		position: absolute;
+		width: 100%;
+		top: -29px;
+		z-index: 1050;
+	}
+	button.btn-circle {
+		display: block;
+		position: relative;
+		top: 0;
+		margin: 0 auto;
+		
+	}
+	img {
+		max-height: 180px;
+	}
+}
+section.portfolio {
+	min-height: 700px;
+	height: 700px;
+	background-color: @active-color;
+	padding-top: 80px;
+
+	.carousel {
+		display: block;
+		height: 575px;
+		margin-top: 80px;
+
+	}
+	.carousel-inner {
+		height: 575px;
+	}
+	.carousel-indicators {
+		top: -45px;
+	}
+	.item {
+		h2 {
+			margin-top:80px;
+			font-size: 34px;
+			strong {
+				font-weight: 400;
+			}
+		}
+		p {
+			font-size: 16px;
+			color: @white;	
+		}
+		.btn {
+			margin-top: 35px;
+		}
+	}
+}
+section.contact {
+	min-height: 475px;
+	height: 475px;
+	background-color: @white;
+	padding-top: 80px;
+	h1,
+	h4,
+	h5,
+	h6,
+	p,
+	a {
+		color: @black;
+		text-align: center;
+	}
+	p {
+		strong {
+			font-weight: 300;
+			color: @active-color;
+		}
+	}
+	.email_and_phone {
+		margin-top: 80px;
+	}
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		li {
+			display: inline-block;
+			a {
+				display: inline-block;
+				padding: 0;
+				line-height: 70px;
+				color: @black;
+				font-weight: 400;
+				font-size: 15px;
+				margin-left: 30px;
+				i {
+					display: block;
+					position: relative;
+					padding: 27px 0;
+					font-size: 16px;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					text-decoration: none;
+					outline: none;
+					color: @active-color;
+				}
+
+			}
+			&:first-child {
+				a {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	display: block;
+	background-color: @white;
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	max-height: 200px;
+	p {
+		color: @black;
+		margin: 80px 0 35px;
+	}
+	.scroll-up-space {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: -29px;
+		z-index: 1050;
+		button {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+/* 
+RESPONSIVE FIXES
+
+480px
+- opravit tlacitko toggle
+- zmensit font na INTRO texte
+- zmensit vysku INTRO
+- zmensit font VSADE
+
+<991px
+ - margin top na about stlpcoch
+ - zmensit obrazok na PORTFOLIO
+ - odsadit obrazok na portfolio
+ - 
+*/
+@media (max-width: 420px) {
+	.intro {
+		h4 {
+			br {
+				display: none;
+			}
+		}
+	}
+}
+@media (max-width: 480px) {
+	h1 {
+		font-size: 33px;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	h5,
+	section.about h5 {
+		font-size: 18px;
+	}
+	h6,
+	section.about h6,
+	section.portfolio .item p {
+		font-size: 14px;
+	}
+	section.intro {
+		height: 550px;
+		max-height: 550px;
+		padding: 135px 0;
+	}
+	.intro-space {
+		height: 550px;
+		max-height: 550px;
+	}
+	.about-item + .about-item {
+		margin-top: 55px;
+	}
+	section.portfolio .item h2 {
+		font-size: 30px;
+		margin-top: 20px;
+	}
+	section.portfolio ol {
+		max-height: 50px;
+	}
+	section.portfolio {
+		.carousel-inner {
+			background-color: @active-color;
+		}
+	}
+	section.contact {
+	}
+	footer p {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 991px) {
+	.about-item {
+		h6 {
+			width: 60%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		& + .about-item {
+			margin-top: 75px;
+		}
+	}
+	section.portfolio {
+		max-height: 900px;
+		height: 900px;
+
+		.carousel-inner {
+			height: 715px;
+		}
+	}
+	section.portfolio .item h2 {
+		font-size: 34px;
+		margin-top: 20px;
+	}
+	section.portfolio ol {
+		max-height: 50px;
+	}
+} 
