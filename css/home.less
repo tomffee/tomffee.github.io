@@ -2,6 +2,12 @@
 @white: #fff;
 @active-color: #2196f3;
 @inactive-color: #e0e0e0;
+html,
+body {
+	display: block;
+	min-height: 100%;
+	outline: none;
+}
 
 h1,
 h2,
@@ -98,22 +104,33 @@ nav {
 		top: -70px;
 		&.showen {
 			top: 0px;
-			-webkit-animation: topp .25s; /* Chrome, Safari, Opera */
-    		animation: topp .25s;
+			-webkit-animation: scrollItDown .25s; /* Chrome, Safari, Opera */
+    		animation: scrollItDown .25s;
 		}
-		&.hidden {
+		&.close-it {
 			top: -70px;
-			transition: top 0.25ms ease-out;
+			-webkit-animation: scrollItUp .25s; /* Chrome, Safari, Opera */
+    		animation: scrollItUp .25s;
 		}
-		@-webkit-keyframes topp {
+		@-webkit-keyframes scrollItDown {
 		    from {top: -70px;}
 		    to {top: 0px;}
 		}
 
 		/* Standard syntax */
-		@keyframes myfirst {
+		@keyframes scrollItDown {
 		    from {top: -70px;}
 		    to {top: 0px;}
+		}
+		@-webkit-keyframes scrollItUp {
+		    from {top: 0px;}
+		    to {top: -70px;}
+		}
+
+		/* Standard syntax */
+		@keyframes scrollItUp {
+		    from {top: 0px;}
+		    to {top: -70px;}
 		}
 	}
 	&.navbar-default {
@@ -153,7 +170,7 @@ nav {
 					i {
 						display: inline-block;
 						position: relative;
-						padding: 27px 0;
+						//padding: 27px 0;
 						font-size: 16px;
 					}
 					i + span {
@@ -212,6 +229,9 @@ nav {
 		}
 	}
 }
+section {
+	width: 100%;
+}
 section.intro {
 	display: block;
 	position: fixed;
@@ -228,8 +248,9 @@ section.intro {
 }
 .intro-space {
 	display: block;
-	height: 800;
-	max-height: 800;
+	height: 800px;
+	max-height: 800px;
+	width: 100%;
 	position: relative;
 	top: 0;
 	background: none;
@@ -502,4 +523,16 @@ RESPONSIVE FIXES
 	section.portfolio ol {
 		max-height: 50px;
 	}
-} 
+}
+
+@media (screen) and (max-height: 835px) {
+	section.intro {
+		height: 500px;
+		max-height: 500px;
+		padding: 135px 0;
+	}
+	.intro-space {
+		height: 500px;
+		max-height: 500px;
+	}
+}
