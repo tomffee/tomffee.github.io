@@ -10,15 +10,15 @@ $(function () {
 		change: function () {
 			$('section.intro').css(
 				{
-					height: 600 + 'px',
-					maxHeight: 600 + 'px',
-					padding: 150 + 'px ' + 0
+					height: 500 + 'px',
+					maxHeight: 500 + 'px',
+					padding: 135 + 'px ' + 0
 				}
 			);
 			$('.intro-space').css(
 				{
-					height: 600 + 'px',
-					maxHeight: 600 + 'px'	
+					height: 500 + 'px',
+					maxHeight: 500 + 'px'	
 				}
 			);
 		}
