@@ -3,25 +3,29 @@ $(function () {
 
 	var introHeight = {
 		init: function () {
-			if( $(window).innerHeight() <= 845 ) {
-				introHeight.change();
-			}
+			var innerH = $(window).innerHeight();
+			if( innerH <= 845 ) {
+				introHeight.change(500, 135);
+			};
+			if ( innerH <= 500) {
+				introHeight.change(450, 80);
+			};
 		},
-		change: function () {
+		change: function (h, p) {
 			$('section.intro').css(
 				{
-					height: 500 + 'px',
-					maxHeight: 500 + 'px',
-					padding: 135 + 'px ' + 0
+					height: h + 'px',
+					maxHeight: h + 'px',
+					padding: p + 'px ' + 0
 				}
 			);
 			$('.intro-space').css(
 				{
-					height: 500 + 'px',
-					maxHeight: 500 + 'px'	
+					height: h + 'px',
+					maxHeight: h + 'px'	
 				}
 			);
-		}
+		},
 	};
 
 	introHeight.init();
